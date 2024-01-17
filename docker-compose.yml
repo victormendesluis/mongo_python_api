@@ -18,7 +18,7 @@ services:
     develop:
       watch:
         - action: sync
-        - path: ./src
+        - path: src
         - target: /usr/src/app
 
 volumes:
