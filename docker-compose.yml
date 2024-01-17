@@ -18,8 +18,10 @@ services:
     develop:
       watch:
         - action: sync
-        - path: src
+        - path: api/src
         - target: /usr/src/app
+        - action: rebuild
+        - path: api
 
 volumes:
   mongo_database:
