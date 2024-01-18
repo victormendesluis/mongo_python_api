@@ -1,15 +1,16 @@
-version: '1.5'
+version: '1.8'
 
 services:
   mongo:
-    images: mongo:latest
+    image: mongo:latest
     ports:
       - "27017:27017"
     environment:
       - MONGO_INITDB_USERNAME=root
       - MONGO_INITDB_PASSWORD=example
       - MONGO_INTDB_DATABASE=testdb
-    api:
+    
+  api:
     build: api/.
     ports:
       - "8086:8086"
