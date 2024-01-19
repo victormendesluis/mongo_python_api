@@ -7,3 +7,24 @@ def print_options():
     print('[M]odificar lista')
     print('[E]liminar lista')
     print('[S]ALIR')
+
+def run():
+    print_options()
+
+    command = input()
+    command = command.upper()
+
+    if command == 'C':
+        pass
+    elif command == 'L':
+        pass
+    elif command == 'M':
+        pass
+    elif command == 'E':
+        pass
+    elif command == 'S':
+        os._exit(1)
+    else:
+        print('Comando inválido')
+        time.sleep(1)
+        run()
