@@ -12,7 +12,7 @@ else: print("HAS ENTRADO EN LA MONGO")
 result=db.createCollection("ToDo", {
    validator: {$jsonSchema: {
       bsonType: "object",
-      required: ["descripcion","fecha","terminado"],
+      required: ["descripcion","fecha","terminado","tipo"],
       properties: {
          descripcion: {
             bsonType: "string",
