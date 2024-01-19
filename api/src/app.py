@@ -25,6 +25,10 @@ result=db.createCollection("ToDo", {
          terminado: {
             enum: [ "No", "Si" ],
             description: "solo puede ser una de las opciones"
+         },
+         tipo: {
+            enum: [ "Texto", "Audio", "Video" ],
+            description: "solo puede ser una de las opciones"
          }
       }
    }}
