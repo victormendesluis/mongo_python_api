@@ -28,3 +28,6 @@ def run():
         print('Comando inválido')
         time.sleep(1)
         run()
+
+if __name__ == "__main__":
+    run()
