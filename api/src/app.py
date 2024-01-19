@@ -9,23 +9,22 @@ try: db.command("ServerStatus")
 except Exception as e:print(e)
 else: print("HAS ENTRADO EN LA MONGO")
 
-result=db.createCollection("contacts", {
+result=db.createCollection("ToDo", {
    validator: {$jsonSchema: {
       bsonType: "object",
-      required: ["phone"],
+      required: ["descripcion","fecha"],
       properties: {
-         phone: {
+         descripcion: {
             bsonType: "string",
-            description: "must be a string and is required"
+            description: "decripcion del to do"
          },
-         email: {
-            bsonType: "string",
-            pattern: "@mongodb\.com$",
-            description: "must be a string and match the regular expression pattern"
+         fecha: {
+            bsonType: "date",
+            description: "tiene que ser una fecha valida"
          },
-         status: {
-            enum: [ "Unknown", "Incomplete" ],
-            description: "can only be one of the enum values"
+         terminado: {
+            enum: [ "Sin terminar", "Terminado" ],
+            description: "solo puede ser una de las opciones"
          }
       }
    }}
