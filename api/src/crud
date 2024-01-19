@@ -1,0 +1,10 @@
+def print_options():
+    print('AGENDA DE CONTACTOS')
+    print('*' * 50)
+    print('Selecciona una opción:')
+    print('[C]rear contacto')
+    print('[L]istado de contactos')
+    print('[M]odificar contacto')
+    print('[E]liminar contacto')
+    print('[B]uscar contacto')
+    print('[S]ALIR')
