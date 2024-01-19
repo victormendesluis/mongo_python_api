@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 
+print('Ejecutando python en el contenedor')
 #MongoDB
 client = MongoClient("mongodb://root:example@mongo:27017")
 db=client.apiDB
