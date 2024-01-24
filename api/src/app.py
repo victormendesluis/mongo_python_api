@@ -13,6 +13,7 @@ collections=db.list_collection_names()
 print('Colecciones: ')
 for(coleccion in collections)
    print coleccion
+
 """
 result=db.createCollection("ToDo", {
    validator: {$jsonSchema: {
