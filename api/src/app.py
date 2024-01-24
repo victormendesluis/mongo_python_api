@@ -9,7 +9,10 @@ try: db.command("serverStatus")
 except Exception as e:print(e)
 else: print("HAS ENTRADO EN LA MONGO")
 
-print('Bienvenido a pymongo')
+collections=db.list_collection_names()
+print('Colecciones: ')
+for(coleccion in collections)
+   print coleccion
 """
 result=db.createCollection("ToDo", {
    validator: {$jsonSchema: {
