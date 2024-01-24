@@ -8,7 +8,7 @@ db=client.apiDB
 try: db.command("ServerStatus")
 except Exception as e:print(e)
 else: print("HAS ENTRADO EN LA MONGO")
-
+"""
 result=db.createCollection("ToDo", {
    validator: {$jsonSchema: {
       bsonType: "object",
@@ -38,5 +38,5 @@ result=db.createCollection("ToDo", {
    }}
 })
 print(result)
-
+"""
 client.close()
