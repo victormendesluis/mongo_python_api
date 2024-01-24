@@ -1,13 +1,15 @@
 from pymongo import MongoClient
 
 print('Ejecutando python en el contenedor')
-#MongoDB
+
 client = MongoClient("mongodb://root:example@mongo:27017")
 db=client.testdb
-print('Bienvenido a pymongo')
+
 try: db.command("ServerStatus")
 except Exception as e:print(e)
 else: print("HAS ENTRADO EN LA MONGO")
+
+print('Bienvenido a pymongo')
 """
 result=db.createCollection("ToDo", {
    validator: {$jsonSchema: {
@@ -39,4 +41,5 @@ result=db.createCollection("ToDo", {
 })
 print(result)
 """
+
 client.close()
