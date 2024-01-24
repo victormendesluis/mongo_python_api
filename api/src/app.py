@@ -5,7 +5,7 @@ print('Ejecutando python en el contenedor')
 client = MongoClient("mongodb://root:example@mongo:27017")
 db=client.testdb
 
-try: db.command("ServerStatus")
+try: db.command("serverStatus")
 except Exception as e:print(e)
 else: print("HAS ENTRADO EN LA MONGO")
 
