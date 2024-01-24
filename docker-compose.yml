@@ -8,9 +8,9 @@ services:
     volumes:
       - mongo_database:/data/db
     environment:
-      - MONGO_INITDB_USERNAME=root
-      - MONGO_INITDB_PASSWORD=example
-      - MONGO_INTDB_DATABASE=testdb
+        MONGO_INITDB_USERNAME: root
+        MONGO_INITDB_PASSWORD: example
+        MONGO_INTDB_DATABASE: testdb
     
   api:
     build: api/.
