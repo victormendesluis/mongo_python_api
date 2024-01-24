@@ -9,17 +9,6 @@ services:
       - MONGO_INITDB_USERNAME=root
       - MONGO_INITDB_PASSWORD=example
       - MONGO_INTDB_DATABASE=apiDB
-  db:
-    image: mariadb
-    restart: always
-    environment:
-      MARIADB_ROOT_PASSWORD: example
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
     
   api:
     build: api/.
