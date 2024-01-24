@@ -26,4 +26,3 @@ services:
 
 volumes:
   mongo_database:
-  db_database:
