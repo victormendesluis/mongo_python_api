@@ -11,7 +11,7 @@ else: print("HAS ENTRADO EN LA MONGO")
 
 collections=db.list_collection_names()
 print('Colecciones: ')
-for(coleccion in collections)
+for coleccion in collections:
    print(coleccion)
 
 """
