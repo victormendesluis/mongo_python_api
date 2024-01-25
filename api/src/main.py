@@ -5,10 +5,12 @@ user="root"
 password="example"
 port=27017
 host="mongo"
-
-conexion = conexion(user, password, host, port)
-"""client = MongoClient("mongodb://root:example@mongo:27017")"""
+"""
+client = MongoClient("mongodb://root:example@mongo:27017")
 db=client.apidb
+"""
+conexion = conexion(user, password, host, port)
+db=conexion.traer_bbdd()
 
 try: db.command("serverStatus")
 except Exception as e:print(e)
