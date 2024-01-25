@@ -6,7 +6,7 @@ password="example"
 port=27017
 host="mongo"
 
-conexion = conexion()
+conexion = conexion(user, password, host, port)
 client = MongoClient("mongodb://root:example@mongo:27017")
 db=client.apidb
 
