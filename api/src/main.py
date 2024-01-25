@@ -42,6 +42,7 @@ def create_collection():
             }
         }}
     })
+    
 def insert(todo):
     db.insert_one({id: todo.id}, {titulo: todo.titulo})
 
