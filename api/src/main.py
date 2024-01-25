@@ -1,4 +1,4 @@
-from pymongo import MongoClient
+"""from pymongo import MongoClient"""
 from conexion import MiConexion
 from todo import MiTodo
 
