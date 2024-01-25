@@ -7,7 +7,7 @@ port=27017
 host="mongo"
 
 conexion = conexion(user, password, host, port)
-client = MongoClient("mongodb://root:example@mongo:27017")
+"""client = MongoClient("mongodb://root:example@mongo:27017")"""
 db=client.apidb
 
 try: db.command("serverStatus")
