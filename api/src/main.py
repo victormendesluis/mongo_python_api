@@ -13,16 +13,15 @@ def create_collection():
   db.createCollection("todo", {
    validator: {$jsonSchema: {
       bsonType: "object",
-      required: ["phone"],
+      required: ["id","titulo"],
       properties: {
-         phone: {
-            bsonType: "string",
-            description: "must be a string and is required"
+         id: {
+            bsonType: "int",
+            description: "id del todo"
          },
-         email: {
+         titulo: {
             bsonType: "string",
-            pattern: "@mongodb\.com$",
-            description: "must be a string and match the regular expression pattern"
+            description: "titulo del todo"
          },
          status: {
             enum: [ "Unknown", "Incomplete" ],
