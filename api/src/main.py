@@ -39,7 +39,6 @@ def create_collection():
                     enum: [ "Texto", "Audio","Imagen","Video" ],
                     description: "tipo de todo"
                 }
-
             }
         }}
     })
