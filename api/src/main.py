@@ -5,6 +5,7 @@ print('Ejecutando python en el contenedor')
 user="root"
 password="example"
 port=27017
+host="mongo"
 
 client = MongoClient("mongodb://root:example@mongo:27017")
 db=client.apidb
