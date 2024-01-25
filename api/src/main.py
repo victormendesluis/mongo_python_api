@@ -11,13 +11,13 @@ client = MongoClient("mongodb://root:example@mongo:27017")
 db=client.apidb
 """
 mi_conexion = conexion(user, password, host, port)
-db=conexion.traer_bbdd()
+db=mi_conexion.traer_bbdd()
 
 try: db.command("serverStatus")
 except Exception as e:print(e)
 else: print("You have access to mongodb")
 
-conexion.cerrar_conexion()
+mi_conexion.cerrar_conexion()
 """
 def create_collection():
     db.createCollection("todo", {
