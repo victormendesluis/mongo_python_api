@@ -15,6 +15,8 @@ db=conexion.traer_bbdd()
 try: db.command("serverStatus")
 except Exception as e:print(e)
 else: print("You have access to mongodb")
+
+conexion.cerrar_conexion()
 """
 def create_collection():
     db.createCollection("todo", {
