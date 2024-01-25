@@ -1,4 +1,4 @@
-class conexion:
+class MiConexion:
   def __init__(self, user, password, host, port):
     self.client=MongoClient(f"mongodb://{user}:{password}@{host}:{port}/")
   
