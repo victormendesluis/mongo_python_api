@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+import conexion as conexion
 
 #MongoDB
 user="root"
