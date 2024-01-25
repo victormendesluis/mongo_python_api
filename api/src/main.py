@@ -1,6 +1,5 @@
 from pymongo import MongoClient
 
-print('Ejecutando python en el contenedor')
 #MongoDB
 user="root"
 password="example"
