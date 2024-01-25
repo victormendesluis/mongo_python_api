@@ -10,23 +10,36 @@ except Exception as e:print(e)
 else: print("You have access to mongodb")
 
 def create_collection():
-  db.createCollection("todo", {
-   validator: {$jsonSchema: {
-      bsonType: "object",
-      required: ["id","titulo"],
-      properties: {
-         id: {
-            bsonType: "int",
-            description: "id del todo"
-         },
-         titulo: {
-            bsonType: "string",
-            description: "titulo del todo"
-         },
-         status: {
-            enum: [ "Unknown", "Incomplete" ],
-            description: "can only be one of the enum values"
-         }
-      }
-   }}
-})
+    db.createCollection("todo", {
+        validator: {$jsonSchema: {
+            bsonType: "object",
+            required: ["id","titulo"],
+            properties: {
+                id: {
+                    bsonType: "int",
+                    description: "id del todo"
+                },
+                titulo: {
+                    bsonType: "string",
+                    description: "titulo del todo"
+                },
+                descripcion: {
+                    bsonType: "string",
+                    description: "descripción del todo"
+                },
+                fecha: {
+                    bsonType: "string",
+                    description: "descripción del todo"
+                },
+                terminado: {
+                    bsonType: "bool",
+                    description: "enum para ver el estado del todo"
+                },
+                tipo: {
+                    enum: [ "Texto", "Audio","Imagen","Video" ],
+                    description: "tipo de todo"
+                }
+
+            }
+        }}
+    })
