@@ -10,7 +10,7 @@ host="mongo"
 client = MongoClient("mongodb://root:example@mongo:27017")
 db=client.apidb
 """
-mi_conexion = conexion(user, password, host, port)
+mi_conexion = MiConexion(user, password, host, port)
 db=mi_conexion.traer_bbdd()
 
 try: db.command("serverStatus")
