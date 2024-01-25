@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from conexion import conexion
+from conexion import MiConexion
 
 #MongoDB
 user="root"
