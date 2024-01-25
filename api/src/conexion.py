@@ -11,6 +11,7 @@ class MiConexion:
 
   def abrir_conexion(self):
     self.client=MongoClient(f"mongodb://{user}:{password}@{host}:{port}/")
+    
   def cerrar_conexion(self):
     self.client.close()
 
