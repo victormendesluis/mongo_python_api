@@ -8,10 +8,7 @@ db=client.apidb
 try: db.command("serverStatus")
 except Exception as e:print(e)
 else: print("You have access to mongodb")
-
-for coleccion in collections:
-   print(coleccion)
-
+"""
 def create_collection():
     db.createCollection("todo", {
         validator: {$jsonSchema: {
@@ -45,7 +42,7 @@ def create_collection():
             }
         }}
     })
-    
+"""   
 def insert(todo):
     db.insert_one({id: todo.id}, {titulo: todo.titulo})
 
