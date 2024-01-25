@@ -49,9 +49,11 @@ def insert(todo):
 def find_by_id(id):
     todo=db.find({id: id})
     print(todo.id+", "+todo.titulo)
-
+"""
 def update(todo):
     db.updateOne({id: todo.id}, {$rename{titulo: todo.titulo}})
-
+"""
 def delete(todo):
     db.deleteOne({id: todo.id})
+
+
