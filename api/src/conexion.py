@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 
 class MiConexion:
-  def __init__(self, user, password, host, port, client):
+  def __init__(self, user, password, host, port):
     try:
       # Establece la conexión a la base de datos
       self.client=MongoClient(f"mongodb://{user}:{password}@{host}:{port}/")
