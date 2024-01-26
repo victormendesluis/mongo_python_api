@@ -1,7 +1,7 @@
 """from pymongo import MongoClient"""
 from conexion import MiConexion
 from todo import MiTodo
-import jsonchema
+"""import jsonchema"""
 
 #MongoDB
 user="root"
@@ -19,39 +19,43 @@ try: db.command("serverStatus")
 except Exception as e:print(e)
 else: print("You have access to mongodb")
 
-def create_collection():
-    db.createCollection("todo", {
-        validator: {$jsonSchema: {
-            bsonType: "object",
-            required: ["id","titulo"],
-            properties: {
-                id: {
-                    bsonType: "int",
-                    description: "id del todo"
+todo_schema = {
+    'validator': {
+        '$jsonSchema': {
+            'bsonType': 'object',
+            'required': ['id', 'titulo'],
+            'properties': {
+                'id': {
+                    'bsonType': 'int',
+                    'description': 'id del todo'
                 },
-                titulo: {
-                    bsonType: "string",
-                    description: "titulo del todo"
+                'titulo': {
+                    'bsonType': 'string',
+                    'description': 'titulo del todo'
                 },
-                descripcion: {
-                    bsonType: "string",
-                    description: "descripción del todo"
+                'descripcion': {
+                    'bsonType': 'string',
+                    'description': 'descripción del todo'
                 },
-                fecha: {
-                    bsonType: "string",
-                    description: "descripción del todo"
+                'fecha': {
+                    'bsonType': 'string',
+                    'description': 'fecha del todo'
                 },
-                terminado: {
-                    bsonType: "bool",
-                    description: "enum para ver el estado del todo"
+                'terminado': {
+                    'bsonType': 'bool',
+                    'description': 'enum para ver el estado del todo'
                 },
-                tipo: {
-                    enum: [ "Texto", "Audio","Imagen","Video" ],
-                    description: "tipo de todo"
+                'tipo': {
+                    'enum': ['Texto', 'Audio', 'Imagen', 'Video'],
+                    'description': 'tipo de todo'
                 }
             }
-        }}
-    }) 
+        }
+    }
+}
+
+def crear_colleccion(schema):
+    db.create_collection(todo_schema)
 
 mi_conexion.cerrar_conexion()
 
@@ -69,4 +73,5 @@ def update(todo):
 def delete(todo):
     db.deleteOne({id: todo.id})
 """
+
 
