@@ -18,7 +18,7 @@ db=mi_conexion.traer_bbdd()
 try: db.command("serverStatus")
 except Exception as e:print(e)
 else: print("You have access to mongodb")
-
+"""
 todo_schema = {
     'validator': {
         '$jsonSchema': {
@@ -53,15 +53,48 @@ todo_schema = {
         }
     }
 }
-
-def crear_colleccion(schema):
-    db.create_collection(todo_schema)
-
+"""
+documento={"name":"Juan"}
+collection=db.todo
+collection.insert_one(documento)
 mi_conexion.cerrar_conexion()
+"""
+db.todo.insert_one({id: 7}, {"name": "MiLista"})
+db.todo.find().pretty()
+db.todo.findOneAndDelete({id:7})
+db.todo.find().pretty()
 
+# Insertar documentos
+documents = [
+    {
+        'id': 1,
+        'titulo': 'Hacer compras',
+        'descripcion': 'Comprar víveres para la semana',
+        'fecha': '2024-01-26',
+        'terminado': False,
+        'tipo': 'Texto'
+    },
+    {
+        'id': 2,
+        'titulo': 'Preparar presentación',
+        'descripcion': 'Preparar la presentación para el cliente',
+        'fecha': '2024-01-27',
+        'terminado': True,
+        'tipo': 'Texto'
+    }
+]
+
+db.todo.insert_many(documents)
+
+# Mostrar datos
+cursor = db.todo.find()
+for document in cursor:
+    print(document)
+
+"""
 """   
 def insert(todo):
-    db.insert_one({id: todo.id}, {titulo: todo.titulo})
+    db.insertOne({id: todo.id}, {titulo: todo.titulo})
 
 def find_by_id(id):
     todo=db.find({id: id})
@@ -73,5 +106,3 @@ def update(todo):
 def delete(todo):
     db.deleteOne({id: todo.id})
 """
-
-
