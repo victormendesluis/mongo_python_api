@@ -18,8 +18,6 @@ try: db.command("serverStatus")
 except Exception as e:print(e)
 else: print("You have access to mongodb")
 
-mi_conexion.cerrar_conexion()
-"""
 def create_collection():
     db.createCollection("todo", {
         validator: {$jsonSchema: {
@@ -52,7 +50,11 @@ def create_collection():
                 }
             }
         }}
-    })  
+    }) 
+
+mi_conexion.cerrar_conexion()
+
+"""   
 def insert(todo):
     db.insert_one({id: todo.id}, {titulo: todo.titulo})
 
